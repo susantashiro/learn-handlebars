@@ -1,0 +1,26 @@
+{
+  "name": "learn-handlebars",
+  "version": "1.0.0",
+  "description": "learn handlebars compiled with node",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server/server.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/susantashiro/learn-handlebars.git"
+  },
+  "author": "Susan Tashiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/susantashiro/learn-handlebars/issues"
+  },
+  "homepage": "https://github.com/susantashiro/learn-handlebars#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.5",
+    "nodemon": "^1.9.1"
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn Handlebars</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+</head>
+<body>
+    <h1>this is the index.html file</h1>
+    <div id="container"></div>
+
+    <script id="entry-template" type="text/x-handlebars-template">
+        <h2>{{jobTitle}}</h2>
+        <p>{{team}}, {{location}}, {{commitment}}</p>
+        <p>{{{summary}}}</p>
+        {{#each items}}
+            <h3>{{subheader}}</h3>
+            <ul>
+                {{details}}
+            </ul>
+        {{/each}}
+    </script>
+
+    <script type="text/javascript">
+        var obj, source, template, html;
+        // source = document.getElementById("entry-template").innerHTML;
+        source = $('#entry-template').html();
+        template = Handlebars.compile(source);
+        obj = template({
+            jobTitle: "Full-Stack Developer",
+            team: "Engineering",
+            location: "Los Angeles, CA",
+            commitment: 'Full-time',
+            summary: '<i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni delectus quia, quod minima nobis et veritatis provident magnam voluptate rem consequatur exercitationem pariatur distinctio quisquam hic inventore ut repudiandae totam!</i>',
+            items: [
+                {subheader: "Responsibilities", details: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores vero minima doloremque necessitatibus molestiae natus provident quas, tempore voluptas accusamus magni autem placeat, fuga, est, architecto earum totam? Magni?'},
+                {subheader: "Qualifications", details: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores vero minima doloremque necessitatibus molestiae natus provident quas, tempore voluptas accusamus magni autem placeat, fuga, est, architecto earum totam? Magni?'}
+            ]
+        });
+        // document.getElementById("container").innerHTML += obj;
+        $('#container').html(obj);
+    </script>
+</body>
+</html>
