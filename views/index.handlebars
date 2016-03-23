@@ -1,11 +1,11 @@
-<div id="container">
-    <h2>{{jobTitle}}</h2>
-    <p>{{team}}, {{location}}, {{commitment}}</p>
-    <p>{{{summary}}}</p>
-    {{#each items}}
-        <h3>{{subheader}}</h3>
-        <ul>
-            {{details}}
-        </ul>
-    {{/each}}
-</div>
+{{>title}}
+{{#each jobs}}
+    <div class="row tm-job-link">
+        <div class="large-6 medium-6 small-12 columns">
+            <h5><a href="job_posting?id={{id}}">{{text}}</a></h5>
+        </div>
+        <div class="large-6 medium-6 small-12 columns text-right">
+            <p>{{categories.location}}, {{categories.commitment}}</p>
+        </div>
+    </div>
+{{/each}}
